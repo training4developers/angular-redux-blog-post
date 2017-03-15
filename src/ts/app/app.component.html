@@ -1,0 +1,16 @@
+<main>
+    <h1>Color Tool</h1>
+    <ul>
+        <li *ngFor="let color of colors">
+            <span>{{color}}</span>
+            <button type="button" (click)="removeColor(color)">X</button>
+        </li>
+    </ul>
+    <form [formGroup]="colorForm">
+        <div>
+            <label>New Color:</label>
+            <input type="text" formControlName="newColor" (keydown.enter)="addColor()">
+        </div>
+        <button type="button" (click)="addColor()">Add Color</button>
+    </form>
+</main>
